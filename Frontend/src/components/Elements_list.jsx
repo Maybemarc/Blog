@@ -2,6 +2,10 @@ import { Github, Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Elements_list() {
+  const mail=  import.meta.env.VITE_MAIL
+  const git = import.meta.env.VITE_GITHUB
+  const SocialMedia = import.meta.env.VITE_INSTAGRAM
+
   return (
     <div>
       <div className="Details">
@@ -12,13 +16,19 @@ function Elements_list() {
           <ul className="Detail_list">
             <h4 className="header_down">Contact</h4>
             <li className="Detail_full">
-              <Github className="icon" />
+              <a href={git} target="blank">
+                <Github className="icon" />
+              </a>
             </li>
             <li className="Detail_full">
-              <Mail className="icon" />
+              <a href={mail} >
+                <Mail className="icon" />
+              </a>
             </li>
             <li className="Detail_full">
-              <Instagram className="icon" />
+              <a href={SocialMedia} target="blank">
+                <Instagram className="icon" />
+              </a>
             </li>
           </ul>
         </div>
@@ -54,7 +64,7 @@ function Elements_list() {
         </div>
         <div className="CopyRight">
           <div>
-            <h2 className="Copy_text" >CopyRight @2025</h2>
+            <h2 className="Copy_text">CopyRight @2025</h2>
           </div>
         </div>
       </div>

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "Backend/Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development nodemon Backend/Server.js",
+  "start": "cross-env NODE_ENV=production node Backend/Server.js"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +23,8 @@
     "morgan": "^1.10.0",
     "neon": "^2.0.0",
     "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }

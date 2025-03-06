@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "Backend/Server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon Backend/Server.js",
-  "start": "cross-env NODE_ENV=production node Backend/Server.js"
+    "dev": "nodemon Backend/Server.js",
+  "start": "node Backend/Server.js"
   },
   "keywords": [],
   "author": "",

@@ -1,9 +1,9 @@
 {
   "name": "the-personal-blog-ohm",
   "version": "1.0.0",
-  "main": "Backend/Server.js",
+  "main": "Server.js",
   "scripts": {
-  "start": "nodemon Server.js"
+  "start": "node --watch Server.js"
   },
   "keywords": [],
   "author": "",

@@ -7,10 +7,12 @@ function BlogPage() {
   const [blogs, setBlogs] = useState(null);
   const [isError, SetIsError] = useState(null);
 
+  const API_URL = import.meta.env.VITE_BACKEND_HOST;
+
   async function fetchBlog() {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/blog/taken/${id}`
+        `${API_URL}/api/blog/taken/${id}`
       );
       SetIsError(null);
       setBlogs(response.data.user);

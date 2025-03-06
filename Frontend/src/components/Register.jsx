@@ -15,7 +15,7 @@ function RegisterPage() {
   async function checkLoggedIn(){
     try {
       const response = await axios.get(
-        `${API_URL}/blog/check`,
+        `${API_URL}/api/blog/check`,
         {
           withCredentials: true,
         }
@@ -42,7 +42,7 @@ function RegisterPage() {
 
     try {
       const response = await axios.post(
-        `${API_URL}/auth/register`,
+        `${API_URL}/api/auth/register`,
         {
           username,
           email,

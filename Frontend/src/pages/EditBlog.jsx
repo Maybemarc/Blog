@@ -13,7 +13,7 @@ function EditBlog() {
 
   async function checkLoggedIn() {
     try {
-      const response = await axios.get(`${API_URL}/blog`, {
+      const response = await axios.get(`${API_URL}/api/blog`, {
         withCredentials: true,
       });
       setIsLoggedIn(response.data.success);
@@ -31,7 +31,7 @@ function EditBlog() {
   async function fetchBlog() {
     try {
       const response = await axios.get(
-        `${API_URL}/blog/taken/${id}`,
+        `${API_URL}/api/blog/taken/${id}`,
         {
           withCredentials: true,
         }
@@ -53,7 +53,7 @@ function EditBlog() {
 
     try {
       const response = await axios.put(
-        `${API_URL}/blog/${id}`,
+        `${API_URL}/api/blog/${id}`,
         {
           title,
           content,

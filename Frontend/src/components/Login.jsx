@@ -12,7 +12,7 @@ function LoginPage() {
 
   async function checkLoggedIn() {
     try {
-      const response = await axios.get(`${API_URL}/blog/check`, {
+      const response = await axios.get(`${API_URL}/api/blog/check`, {
         withCredentials: true,
       });
       if (response.data.success) {
@@ -35,7 +35,7 @@ function LoginPage() {
 
     try {
       const response = await axios.post(
-        `${API_URL}/auth/login`,
+        `${API_URL}/api/auth/login`,
         {
           email,
           password,

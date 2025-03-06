@@ -13,7 +13,7 @@ function UserBlogs() {
 
   async function checkLoggedIn() {
     try {
-      const response = await axios.get(`${API_URL}/blog/check`, {
+      const response = await axios.get(`${API_URL}/api/blog/check`, {
         withCredentials: true,
       });
       setIsLoggedIn(response.data.success);
@@ -28,7 +28,7 @@ function UserBlogs() {
 
   async function fetchUserBlogs() {
     try {
-      const response = await axios.get(`${API_URL}/blog/blogs`, {
+      const response = await axios.get(`${API_URL}/api/blog/blogs`, {
         withCredentials: true,
       });
       setUserBlogs(response.data.user);
@@ -45,7 +45,7 @@ function UserBlogs() {
 
   async function handleDelete(blogId) {
     try {
-      await axios.delete(`${API_URL}/blog/${blogId}`, {
+      await axios.delete(`${API_URL}/api/blog/${blogId}`, {
         withCredentials: true,
       });
       setUserBlogs(userBlogs.filter((blog) => blog.id !== blogId));

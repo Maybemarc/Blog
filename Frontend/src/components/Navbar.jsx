@@ -13,7 +13,7 @@ function Navbar() {
 
   async function checkLoggedIn() {
     try {
-      const response = await axios.get(`${API_URL}/blog/check`, {
+      const response = await axios.get(`${API_URL}/api//blog/check`, {
         withCredentials: true,
       });  
       setIsLoggedIn(response.data.success);
@@ -48,7 +48,7 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        `${API_URL}/auth/logout`,
+        `${API_URL}/api/auth/logout`,
         {},
         {
           withCredentials: true,

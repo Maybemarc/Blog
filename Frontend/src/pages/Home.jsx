@@ -13,7 +13,7 @@ function HomePage() {
 
   async function fetchBlogs() {
     try {
-      const response = await axios.get(`${API_URL}/blog`, {
+      const response = await axios.get(`${API_URL}/api/blog`, {
         withCredentials: true,
       });
       setBlogs(response.data.user);
@@ -25,7 +25,7 @@ function HomePage() {
 
   async function checkLoggedIn() {
     try {
-      const response = await axios.get(`${API_URL}/blog/check`, {
+      const response = await axios.get(`${API_URL}/api/blog/check`, {
         withCredentials: true,
       });
       setIsLoggedIn(response.data.success);
@@ -39,21 +39,6 @@ function HomePage() {
     fetchBlogs();
   }, []);
 
-  // const handleLogout = async () => {
-  //   try {
-  //     await axios.post(
-  //       "http://localhost:3000/api/auth/logout",
-  //       {},
-  //       {
-  //         withCredentials: true,
-  //       }
-  //     );
-  //     setIsLoggedIn(false);
-  //     toast.success("Logged out successfully!");
-  //   } catch (error) {
-  //     toast.error("Logout failed");
-  //   }
-  // };
 
   const limiter = (content) => {
     const words = content.split(" ");

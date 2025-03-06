@@ -15,8 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/blog", blogRoutes);
 
 async function initDB() {
   try {
@@ -57,6 +55,11 @@ async function inBlogDB() {
 
 await initDB()
 await inBlogDB()
+
+
+
+app.use("/api/auth", authRoutes);
+app.use("/api/blog", blogRoutes);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

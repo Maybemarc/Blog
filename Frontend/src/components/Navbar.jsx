@@ -55,7 +55,9 @@ function Navbar() {
       );
       setIsLoggedIn(false);
       toast.success("Logged out successfully!");
-      window.location.href = "/login";
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 500)
     } catch (error) {
       toast.error("Logout failed");
     }

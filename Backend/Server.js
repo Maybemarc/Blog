@@ -11,7 +11,10 @@ dotenv.config();
 const app = express();
 const port = process.env.BACKEND;
 
-const allowedOrigins = [ process.env.FRONTEND_URL];
+const allowedOrigins = [
+  "https://blog-aci3.vercel.app",
+  "https://blog-aci3-git-master-marcs-projects-2bd54b92.vercel.app", 
+];
 
 app.use(
   cors({

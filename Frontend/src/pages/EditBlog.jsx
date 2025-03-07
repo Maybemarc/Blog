@@ -13,7 +13,7 @@ function EditBlog() {
 
   async function checkLoggedIn() {
     try {
-      const response = await axios.get(`${API_URL}/api/blog`, {
+      const response = await axios.get(`${API_URL}/api/blog/check`, {
         withCredentials: true,
       });
       setIsLoggedIn(response.data.success);

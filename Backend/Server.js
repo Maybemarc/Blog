@@ -11,17 +11,18 @@ dotenv.config();
 const app = express();
 const port = process.env.BACKEND;
 
+app.use(
+  cors({
+    origin: `${process.env.FRONTEND_URL}`,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-
-const allowCrossDomain = (req, res, next) => {
-  res.header(`Access-Control-Allow-Origin`, `*`);
-  res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
-  res.header(`Access-Control-Allow-Headers`, `*`);
-  next();
-};
-app.use(allowCrossDomain);
 
 async function initDB() {
   try {
@@ -60,10 +61,8 @@ async function inBlogDB() {
   }
 }
 
-await initDB()
-await inBlogDB()
-
-
+await initDB();
+await inBlogDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/blog", blogRoutes);

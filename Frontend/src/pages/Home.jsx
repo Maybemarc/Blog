@@ -43,7 +43,7 @@ function HomePage() {
   const limiter = (content) => {
     const words = content.split(" ");
     if (words.length > 30) {
-      return words.slice(0, 20).join(" ") + "...";
+      return words.slice(0, 15).join(" ") + "...";
     }
     return content;
   };
@@ -118,8 +118,8 @@ function HomePage() {
                   </div>
                   <div className="content">
                     <p>{limiter(blog.content)}</p>
-                    <span>Read more...</span>
-                    <p>Post: {blog.id}</p>
+                    <span className="Read" >Read more...</span>
+                    <p className="post_id">Post: {blog.id}</p>
                   </div>
                 </div>
               </Link>

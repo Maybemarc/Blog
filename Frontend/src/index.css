@@ -44,9 +44,8 @@ a{
   grid-template-columns: 50% 50%;
   gap: 10px;
   text-align: center;
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin-right: 25px;
   margin-left: 5px;
   background-color: white;
@@ -79,7 +78,7 @@ a{
 
  
 .Component{
-  margin-top: 10px;
+  margin-top: 2px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -90,8 +89,9 @@ a{
 }
 
 .collection{
+  position: relative;
   margin-top: 40px;
-  padding: 30px;
+  padding:  30px;
   border-radius: 10%;
   border: 2px solid #79F1A4 ;
   text-align: center;
@@ -102,8 +102,17 @@ a{
   cursor: pointer;
   background-color: transparent;
   margin-bottom: 20px;
-  
 }  
+
+.Read{
+  position: absolute;
+  bottom: 50px;
+}
+
+.post_id{
+  position: absolute;
+  bottom: 1px;
+}
 
 .collection:hover{
   transform: translateY(-10px);
@@ -901,6 +910,10 @@ button {
     font-size: 2em;
   }
 
+  .description{
+    padding-top: 2px;
+  }
+
   .description_items > p{
     font-size: 1.35em;
   }
@@ -1026,8 +1039,5 @@ button {
 
  }
 
-@media (max-width: 800px) {
-
-}
 
 

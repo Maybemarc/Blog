@@ -7,20 +7,19 @@ import { Menu, X } from "lucide-react";
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [username,SetUsername] = useState("")
+  const [username, SetUsername] = useState("");
   const navigate = useNavigate();
-  const API_URL = import.meta.env.VITE_BACKEND_HOST
+  const API_URL = import.meta.env.VITE_BACKEND_HOST;
 
   async function checkLoggedIn() {
     try {
       const response = await axios.get(`${API_URL}/api/blog/check`, {
         withCredentials: true,
-      });  
+      });
       setIsLoggedIn(response.data.success);
       if (response.data.success) {
         SetUsername(response.data.username);
       }
-      
     } catch (error) {
       if (error.response?.status !== 401) {
         console.error("Error checking login status:", error);
@@ -55,7 +54,8 @@ function Navbar() {
         }
       );
       setIsLoggedIn(false);
-      navigate("/");
+      navigate("/login");
+      setTimeout(checkLoggedIn, 100);
       toast.success("Logged out successfully!");
     } catch (error) {
       toast.error("Logout failed");
@@ -106,7 +106,7 @@ function Navbar() {
                 </button>
               </li>
               <li>
-              <Link to="/user-blog">
+                <Link to="/user-blog">
                   <button className="btn_nav" onClick={closeSidebar}>
                     {username}
                   </button>

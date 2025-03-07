@@ -11,11 +11,25 @@ dotenv.config();
 const app = express();
 const port = process.env.BACKEND;
 
-app.use(cors({
-  origin: 'https://blog-aci3-marcs-projects-2bd54b92.vercel.app', 
-  credentials: true
-}));
+const allowedOrigins = [
+  "https://blog-aci3.vercel.app",
+  "https://blog-aci3-git-master-marcs-projects-2bd54b92.vercel.app", 
+];
 
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    allowedHeaders: ["Content-Type", "Authorization"], 
+  })
+);
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());

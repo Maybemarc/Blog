@@ -1,20 +1,33 @@
-Built a scalable full-stack blog platform where users can securely create accounts, manage blog posts, and interact with public content. The platform allows users to create, read, update, and delete their own blogs while viewing posts created by others.
+# 📝 Personal Blog Site – PERN Stack
 
-Key Features:
-Implemented user authentication using JWT and cookie-based login for secure session management. Passwords are encrypted with bcrypt to ensure data security. Developed full CRUD functionalities for blog posts, with protected routes using custom authentication middleware. The frontend is built with React.js to provide a responsive and user-friendly experience, while the backend APIs are developed using Node.js and Express.js. PostgreSQL is used for reliable and efficient database management.
+A full-stack personal blog application built using the **PERN** stack (PostgreSQL, Express.js, React.js, Node.js).  
+This project allows users to securely register, log in, and manage their own blog posts with clean, responsive UI and protected backend routes.
 
-Impact:
-Designed for security, scalability, and seamless user experience to meet real-world application standards.
+---
 
-Deployment:
-The backend is deployed on Vercel with integration to the Neon cloud database, while the frontend is also hosted on Vercel to ensure high availability and global performance.
+## ⚙️ Tech Stack
 
-Tech Stack:
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: PostgreSQL
-Authentication: JWT, bcrypt, cookie-parser
-Deployment: Vercel, Neon
+- **Frontend**: React.js, Axios, React Router
+- **Backend**: Node.js, Express.js
+- **Database**: PostgreSQL (with Sequelize/pg)
+- **Authentication**: JWT, bcrypt, cookie-parser
+- **Deployment**: Vercel (Frontend), Render/Node Deployment Platform (Backend)
+
+---
+
+## 🚀 Features
+
+- 🔐 **Authentication** using JWT + bcrypt with secure cookie storage
+- 📝 **CRUD operations** for blog posts (Create, Read, Update, Delete)
+- 🎯 User-specific post management and protected routes
+- 📱 Responsive UI and seamless user experience
+- ☁️ Fully deployed frontend & backend with proper CORS handling
+
+---
+
+## 📂 Folder Structure
+
+
 
 
 ![Screenshot 2025-04-28 141847](https://github.com/user-attachments/assets/e961537f-5b68-49bd-a648-473fcf18818a)

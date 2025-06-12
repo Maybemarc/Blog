@@ -25,9 +25,5 @@ This project allows users to securely register, log in, and manage their own blo
 
 ---
 
-## 📂 Folder Structure
-
-
-
 
 ![Screenshot 2025-04-28 141847](https://github.com/user-attachments/assets/e961537f-5b68-49bd-a648-473fcf18818a)
